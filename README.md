@@ -13,12 +13,6 @@ Through this project, I explored:
 
 ## Project Structure
 ```
-├── data/                    # Data directory (created automatically)
-│   └── ml-latest-small/     # MovieLens dataset
-│       ├── ratings.csv      # User ratings (userId, movieId, rating, timestamp)
-│       ├── movies.csv       # Movie metadata (movieId, title, genres)
-│       ├── tags.csv         # User-generated tags
-│       └── links.csv        # Links to IMDB/TMDB
 ├── src/recommender/         # Core implementation
 │   ├── data.py              # Data loading and preprocessing
 │   ├── model.py             # UserCF algorithm implementation
@@ -26,7 +20,16 @@ Through this project, I explored:
 ├── scripts/                 # Evaluation and utilities
 │   └── evaluate_movielens.py # Comprehensive evaluation script
 ├── FINAL_REPORT.pdf         # Detailed analysis and results
-└── requirements.txt         # Python dependencies
+├── requirements.txt         # Python dependencies
+└── assignment_submission.md # Project documentation
+
+# After first run, data directory is created:
+└── data/                    # Created automatically on first run
+    └── ml-latest-small/     # MovieLens dataset
+        ├── ratings.csv      # User ratings (userId, movieId, rating, timestamp)
+        ├── movies.csv       # Movie metadata (movieId, title, genres)
+        ├── tags.csv         # User-generated tags
+        └── links.csv        # Links to IMDB/TMDB
 ```
 
 ## Getting Started
