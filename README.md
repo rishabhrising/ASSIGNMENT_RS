@@ -13,7 +13,13 @@ Through this project, I explored:
 
 ## Project Structure
 ```
-├── src/recommender/          # Core implementation
+├── data/                    # Data directory (created automatically)
+│   └── ml-latest-small/     # MovieLens dataset
+│       ├── ratings.csv      # User ratings (userId, movieId, rating, timestamp)
+│       ├── movies.csv       # Movie metadata (movieId, title, genres)
+│       ├── tags.csv         # User-generated tags
+│       └── links.csv        # Links to IMDB/TMDB
+├── src/recommender/         # Core implementation
 │   ├── data.py              # Data loading and preprocessing
 │   ├── model.py             # UserCF algorithm implementation
 │   └── api.py               # Simple web API for testing
@@ -40,6 +46,34 @@ Through this project, I explored:
    ```bash
    pip install -r requirements.txt
    ```
+
+### Data Setup
+
+**The dataset is downloaded automatically!** The first time you run the evaluation script, it will:
+- Download the MovieLens small dataset from GroupLens
+- Extract it to `data/ml-latest-small/`
+- Load the ratings data from CSV files
+
+**Data Location:**
+- Default path: `data/ml-latest-small/`
+- You can specify a custom path using the `--data-dir` flag
+- Set `ML_DATA_DIR` environment variable for the API
+
+**Data Structure:**
+The main file used is `ratings.csv` with this structure:
+```csv
+userId,movieId,rating,timestamp
+1,1,4.0,964982703
+1,3,4.0,964981247
+2,10,4.0,835355493
+...
+```
+
+**Manual Setup (Optional):**
+If you prefer to download manually:
+1. Download from: https://files.grouplens.org/datasets/movielens/ml-latest-small.zip
+2. Extract to `data/ml-latest-small/`
+3. Ensure `ratings.csv` exists in that directory
 
 ### Quick Demo
 Run the evaluation on MovieLens dataset:
